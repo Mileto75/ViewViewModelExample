@@ -10,8 +10,21 @@ namespace ViewViewModelExample.Controllers
 {
     public class HomeController : Controller
     {
+        private Games myGames;
+        public HomeController()
+        {
+            myGames = new Games();
+        }
         public IActionResult Index()
         {
+            return View();
+        }
+
+        [Route("games/getgames")]
+        public IActionResult GetGames()
+        {
+            ViewBag.Title= "My Games";
+            ViewBag.MyGames = myGames.MyGames;
             return View();
         }
 
