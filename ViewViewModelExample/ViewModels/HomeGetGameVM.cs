@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ViewViewModelExample.Models
 {
-    public class Game
+    public class HomeGetGameVM
     {
         public int GameId { get; set; }
         public string GameTitle { get; set; }
