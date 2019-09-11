@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ViewViewModelExample.Models
+namespace ViewViewModelExample.ViewModels
 {
     public class HomeGetGameVM
     {
