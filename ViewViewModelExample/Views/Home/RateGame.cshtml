@@ -1,0 +1,11 @@
+﻿@model ViewViewModelExample.ViewModels.HomeRateGameVM
+@{
+    ViewData["Title"] = "You rated";
+}
+
+<h3>@ViewData["Title"]</h3>
+<article>
+    <p>You have rated the game @Model.Gametitle</p>
+    <p>Your score = @Model.Gamerating</p>
+</article>
+
