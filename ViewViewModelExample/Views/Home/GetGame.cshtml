@@ -1,0 +1,30 @@
+﻿@model ViewViewModelExample.ViewModels.HomeGetGameVM
+@{
+    ViewData["Title"] = "GetGame";
+}
+
+@if (Model.GameId == -1)
+{
+    <h2>No Game</h2>
+}
+else
+{
+    <h1>@Model.GameTitle.</h1>
+    <ul>
+        <li>@Model.GamePublisher</li>
+    </ul>
+}
+
+@switch(Model.GameId)
+{
+    case -1:
+        <p>there is no game selected</p>
+        break;
+    case 0:
+        <p>Wolfenstein selected</p>
+        break;
+    case 1:
+        <p>Fifa Selected</p>
+        break;
+}
+

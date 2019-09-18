@@ -7,7 +7,7 @@ namespace ViewViewModelExample.ViewModels
 {
     public class HomeGetGameVM
     {
-        public int GameId { get; set; }
+        public int? GameId { get; set; }
         public string GameTitle { get; set; }
         public string GamePublisher { get; set; }
     }

@@ -34,7 +34,19 @@ namespace ViewViewModelExample.Controllers
             //pass the ViewModel to the View
             return View(gamesVM);
         }
-
+        [Route("games/getgame/{GameId}")]
+        public IActionResult GetGame(int GameId)
+        {
+            //make the model
+            HomeGetGameVM myGameVM = new HomeGetGameVM();
+            //get the game
+            Game myGame = gameRepository.GetGames().FirstOrDefault(g => g.GameId == GameId);
+            //put in ViewModel
+            myGameVM.GameId = myGame?.GameId ?? -1;
+            myGameVM.GameTitle = myGame?.GameTitle ?? "<NoTitle>";
+            myGameVM.GamePublisher = myGame?.GamePublisher ?? "<NoPublisher>";
+            return View(myGameVM);
+        }
        
 
         public IActionResult Privacy()
