@@ -1,7 +1,18 @@
-﻿
-    <h1>@ViewBag.Title</h1>
-    @foreach(var game in ViewBag.MyGames)
+﻿@model ViewViewModelExample.ViewModels.HomeGetGameVM
+
+@{
+    for(int getal=1;getal<=10;getal++ )
     {
-        <h1>@game.GameTitle</h1>
+        @:getal is nu @getal
     }
+}
+
+<h1>@ViewBag.PageTitle</h1>
+<ul>
+    <li>Id: @Model.GameId</li>
+    <li>Title: @Model.GameTitle</li>
+    <li>Publisher: @Model.GamePublisher</li>
+</ul>
+
+
 

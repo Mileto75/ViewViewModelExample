@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ViewViewModelExample.Models;
 using ViewViewModelExample.ViewModels;
 
 namespace ViewViewModelExample.Controllers
@@ -20,12 +21,19 @@ namespace ViewViewModelExample.Controllers
             return View();
         }
 
+
         [Route("games/getgames")]
         public IActionResult GetGames()
         {
-            ViewBag.Title= "My Games";
-            ViewBag.MyGames = myGames.MyGames;
-            return View();
+            ViewBag.PageTitle = "My Game";
+            //create the ViewModel
+            var gameVm = new HomeGetGameVM();
+            //populate the ViewModel
+            gameVm.GameId = 1;
+            gameVm.GameTitle = "Wolfenstein Colossus";
+            gameVm.GamePublisher = "Machine Games";
+            //pass the ViewModel to the View
+            return View(gameVm);
         }
 
         public IActionResult Privacy()
