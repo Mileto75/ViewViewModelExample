@@ -1,13 +1,4 @@
-﻿@using Example.Games.Domain
-@{
-    Game myGame = new Game();
- }
-    @for(int getal=1;getal<=10;getal++ )
-    {
-        <p>getal is nu @getal</p>
-    }
-
-
+﻿
 <h1>@ViewBag.PageTitle</h1>
 <ul>
     @foreach(var game in Model.games)
@@ -16,14 +7,7 @@
     }
 </ul>
 
-@try
-{
-    <p>@Model.games.ToArray()[9]</p>
-}
-catch(IndexOutOfRangeException e)
-{
-    <p>@e.Message</p>
-}
+
 
 
 
