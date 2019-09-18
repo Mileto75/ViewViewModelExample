@@ -48,7 +48,6 @@ namespace ViewViewModelExample.Controllers
             return View(myGameVM);
         }
        
-
         public IActionResult Privacy()
         {
             return View();

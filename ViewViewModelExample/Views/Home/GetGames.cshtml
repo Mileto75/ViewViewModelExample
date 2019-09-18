@@ -1,22 +1,29 @@
-﻿@model ViewViewModelExample.ViewModels.HomeGetGamesVM
-
+﻿@using Example.Games.Domain
 @{
-    for(int getal=1;getal<=10;getal++ )
+    Game myGame = new Game();
+ }
+    @for(int getal=1;getal<=10;getal++ )
     {
-        @:getal is nu @getal
+        <p>getal is nu @getal</p>
     }
-}
+
 
 <h1>@ViewBag.PageTitle</h1>
 <ul>
     @foreach(var game in Model.games)
     {
-        if(game.GameTitle.Contains("F"))
-        {
-            <li>@game.GameTitle</li>
-        }
+        <li>@game.GameTitle</li>
     }
 </ul>
+
+@try
+{
+    <p>@Model.games.ToArray()[9]</p>
+}
+catch(IndexOutOfRangeException e)
+{
+    <p>@e.Message</p>
+}
 
 
 
