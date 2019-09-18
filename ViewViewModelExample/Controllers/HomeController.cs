@@ -4,17 +4,17 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ViewViewModelExample.Models;
+using Example.Games.Domain;
 using ViewViewModelExample.ViewModels;
 
 namespace ViewViewModelExample.Controllers
 {
     public class HomeController : Controller
     {
-        private Games myGames;
+        private Gamerepository gameRepository;
         public HomeController()
         {
-            myGames = new Games();
+            gameRepository = new Gamerepository();
         }
         public IActionResult Index()
         {

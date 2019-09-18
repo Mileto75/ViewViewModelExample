@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Example.Games.Domain
 {
-    class Gamerepository
+    public class Gamerepository
     {
         private IEnumerable<Game> MyGames;
         public IEnumerable<Game> GetGames()
