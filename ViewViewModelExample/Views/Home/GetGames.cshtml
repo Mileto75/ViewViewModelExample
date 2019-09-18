@@ -10,6 +10,14 @@
                asp-action="GetGame" 
                asp-route-GameId="@game.GameId"
                class="btn btn-outline-primary">Info</a>
+            <a asp-controller="home" 
+               asp-action="rategame"
+               asp-route-gameId="@game.GameId"
+               asp-route-rating="5"
+               class="btn btn-outline-primary">
+                Rate!
+            </a>
+
         </li>
     }
 </ul>

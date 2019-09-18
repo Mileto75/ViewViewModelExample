@@ -48,9 +48,15 @@ namespace ViewViewModelExample.Controllers
             return View(myGameVM);
         }
         [Route("home/rategame/{GameId}/{Rating}")]
-        public IActionResult RateGame(int gameId, int rating)
+        public IActionResult RateGame(int gameId, int? rating)
         {
-            return View();
+            //Viewmodel declareren
+            HomeRateGameVM homeRateGameVM = new HomeRateGameVM();
+            var game = gameRepository.GetGames().FirstOrDefault(g => g.GameId == gameId);
+            homeRateGameVM.GameId = game?.GameId ?? 0;
+            homeRateGameVM.Gametitle = game?.GameTitle ?? "<NoTitle>";
+            homeRateGameVM.Gamerating = rating ?? 0;
+            return View(homeRateGameVM);
         }
         public IActionResult Privacy()
         {

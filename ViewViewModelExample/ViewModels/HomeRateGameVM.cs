@@ -9,6 +9,6 @@ namespace ViewViewModelExample.ViewModels
     {
         public int GameId { get; set; }
         public string Gametitle { get; set; }
-        public int Gamerating { get; set; }
+        public int? Gamerating { get; set; }
     }
 }
