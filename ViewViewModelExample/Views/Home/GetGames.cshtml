@@ -1,9 +1,16 @@
-﻿
+﻿@model ViewViewModelExample.ViewModels.HomeGetGamesVM
 <h1>@ViewBag.PageTitle</h1>
 <ul>
     @foreach(var game in Model.games)
     {
-        <li>@game.GameTitle</li>
+        <li>
+            @game.GameTitle
+            <a 
+               asp-controller="Home" 
+               asp-action="GetGame" 
+               asp-route-GameId="@game.GameId"
+               class="btn btn-outline-primary">Info</a>
+        </li>
     }
 </ul>
 
