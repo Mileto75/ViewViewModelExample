@@ -1,20 +1,13 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
-    List<int> getallen = new List<int>();
-    for (int i = 0; i < 10; i++)
-    {
-        getallen.Add(i);
-    }
+    ViewData["Title"] = "Game Review";
+    
 }
-    <div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <H3>Getallen</H3>
-        @{ 
-            int theId = 7;
-            string theFilterText = "example two b"; 
-            } 
-        <a asp-controller="TagHelpers" asp-action="MethodWithParameters" 
-           asp-route-id=@(theId) 
-           asp-route-filterText=@theFilterText class="btn btn-success">Go to MethodWithParameters</a>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="text-lg-left">
+        <h3 class="display-5">Welcome to our awesome game review site</h3>
+        <a 
+           asp-controller="Home" 
+           asp-action="GetGames" 
+           class="btn btn-outline-primary">
+            Bekijk alle games
+        </a>
     </div>
