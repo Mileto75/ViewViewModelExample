@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Example.Games.Domain;
 using ViewViewModelExample.ViewModels;
+using ViewViewModelExample.Models;
 
 namespace ViewViewModelExample.Controllers
 {
@@ -25,16 +26,16 @@ namespace ViewViewModelExample.Controllers
         [Route("games/getgames")]
         public IActionResult GetGames()
         {
-            ViewBag.PageTitle = "My Game";
+            ViewBag.PageTitle = "My Games";
             //create the ViewModel
-            var gameVm = new HomeGetGameVM();
+            var gamesVM = new HomeGetGamesVM();
             //populate the ViewModel
-            gameVm.GameId = 1;
-            gameVm.GameTitle = "Wolfenstein Colossus";
-            gameVm.GamePublisher = "Machine Games";
+            gamesVM.games = gameRepository.GetGames();
             //pass the ViewModel to the View
-            return View(gameVm);
+            return View(gamesVM);
         }
+
+       
 
         public IActionResult Privacy()
         {

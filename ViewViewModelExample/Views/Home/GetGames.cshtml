@@ -1,4 +1,4 @@
-﻿@model ViewViewModelExample.ViewModels.HomeGetGameVM
+﻿@model ViewViewModelExample.ViewModels.HomeGetGamesVM
 
 @{
     for(int getal=1;getal<=10;getal++ )
@@ -9,9 +9,13 @@
 
 <h1>@ViewBag.PageTitle</h1>
 <ul>
-    <li>Id: @Model.GameId</li>
-    <li>Title: @Model.GameTitle</li>
-    <li>Publisher: @Model.GamePublisher</li>
+    @foreach(var game in Model.games)
+    {
+        if(game.GameTitle.Contains("F"))
+        {
+            <li>@game.GameTitle</li>
+        }
+    }
 </ul>
 
 
