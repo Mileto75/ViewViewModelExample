@@ -47,7 +47,11 @@ namespace ViewViewModelExample.Controllers
             myGameVM.GamePublisher = myGame?.GamePublisher ?? "<NoPublisher>";
             return View(myGameVM);
         }
-       
+        [Route("home/rategame/{GameId}/{Rating}")]
+        public IActionResult RateGame(int gameId, int rating)
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
